@@ -1,0 +1,36 @@
+.container {
+    /* width: 80%; */
+    height: auto;
+    margin: 0 auto;
+    /* border: 1px solid black; */
+    padding: 10px;
+}
+.header {
+    /* border-bottom: 1px solid black; */
+    padding: 5px;
+    background-color: rgb(102, 184, 255);
+}
+.heading div p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 26px;
+}
+.contact {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+.slider {
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+
+mat-card {
+    width: 400px;
+    box-shadow: 2px 2px gray;
+}
+
+.footer {
+    height: 100px;
+}

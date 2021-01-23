@@ -1,0 +1,43 @@
+.container-fluid {
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../assets/images/slider-8.jpg);
+	color: white;
+	background-repeat: no-repeat;
+	height: 90vh;
+	background-size: cover;
+	background-position: center;
+}
+.mat-chip {
+    background-color: rgb(238, 234, 234);
+}
+section {
+	position: relative;
+	top: 30%;
+	line-height: 35px;
+	margin: 0 auto;
+	color: white;
+	font-size: 1rem;
+	font-weight: 500;
+}
+.section2 {
+	margin-top: 50px;
+}
+.productsContainer {
+	background-color: white;
+	padding: 2em;
+}
+.fw-light {
+	font-size: 2.2rem;
+	text-transform: capitalize;
+}
+mat-card {
+	min-width: 220px;
+	width: 300px;
+	margin: 5px 0px;
+}
+.text {
+	position: absolute;
+	top: 35%;
+	left: 50%;
+	transform: translate(-50%);
+	text-align: center;
+}

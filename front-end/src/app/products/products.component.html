@@ -1,0 +1,115 @@
+<div class="container-fluid">
+	<section class="text-center container">
+		<div class="">
+			<img  src="assets/images/logobig.png" width="250px" alt="" />
+			<br />
+			<!-- <br /> -->
+			<h1 class="fw-light">UNIK Pipe Fittings Company</h1>
+			<p style="font-size: 1.2rem">One of the leading manufacturers of malleable iron, galvanized pipe fittings in India</p>
+		</div>
+	</section>
+</div>
+<div class="container section2">
+	<h1 style="
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: purple;
+    ">
+    Our products
+  </h1>
+	<p style="font-size: 1rem; text-align: center" class="mb-4">Largest Selling Pipe Fitting & Valves in India</p>
+	<div class="productsContainer">
+		<div class="categories" fxLayout="row wrap" fxLayout.xs='column' fxLayoutGap="5px">
+      <h2>Categories:</h2>
+      <mat-chip-list >
+        <mat-chip (click)="find('all')" [style.border]="search=='' ? '1px solid black' : ''">All</mat-chip>
+        <mat-chip (click)="find('unik')" [style.border]="search=='unik' ? '1px solid black' : ''">UNIK</mat-chip>
+        <mat-chip (click)="find('acg unik')" [style.border]="search=='acg unik' ? '1px solid black' : ''">ACG UNIK</mat-chip>
+        <mat-chip (click)="find('acg isi')" [style.border]="search=='acg isi' ? '1px solid black' : ''">ACG ISI</mat-chip>
+        <mat-chip (click)="find('reducing')" [style.border]="search=='reducing' ? '1px solid black' : ''">Reducing sizes</mat-chip>
+      </mat-chip-list>
+				<div>
+					<input type="text" class="form-control" style="min-width: 70px" placeholder="Search for Products.." [(ngModel)]="search" />
+				</div>
+		</div>
+		<br />
+		<div style="position: relative" *ngIf="products.length == 0">
+			<mat-spinner style="margin: 0 auto" [diameter]="170" strokeWidth="4"></mat-spinner>
+			<div class="text">
+				<p>Getting products..</p>
+				<p>Please wait..</p>
+			</div>
+		</div>
+		<div *ngIf="products" class="cards" fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-around center">
+      
+			<mat-card *ngFor="let product of products | filter: search as result; let i = index">
+				<img src="{{ product.image }}" mat-card-image alt="" />
+				<mat-card-content>
+					<div fxLayout="column" fxLayoutAlign="space-around none">
+						<div fxLayout="row">
+							<div>
+								<h1>
+                  {{ product.name | titlecase }}
+                  <small style="font-size: 14px" class="badge badge-dark">
+                    {{ product.category | uppercase }}
+                  </small>
+                </h1>
+							</div>
+						</div>
+						<div fxLayout="column" fxLayoutAlign="space-around none">
+							<div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="5px">
+								<div [fxFlex]="product.is_reducing ? '50' : '100'" fxLayout="column">
+									<label for="">Large size:</label>
+									<mat-form-field appearance="outline" style="width: 100%">
+										<mat-label>Size</mat-label>
+										<mat-select #size1 (selectionChange)="size1change(size1.value, i)">
+											<mat-option [value]="size" *ngFor="let size of product.size1">{{ size }}</mat-option>
+										</mat-select>
+									</mat-form-field>
+								</div>
+								<div fxFlex="50" fxLayout="column" *ngIf="product.is_reducing">
+									<label for="">Small size:</label>
+									<mat-form-field appearance="outline" style="width: 100%">
+										<mat-label>Reduced size</mat-label>
+										<mat-select #size2 (selectionChange)="
+                        size2change(i, size1.value, size2.value)
+                      ">
+											<mat-option [value]="size" *ngFor="let size of product.size2">{{ size }}</mat-option>
+										</mat-select>
+									</mat-form-field>
+								</div>
+							</div>
+							<div>
+								<h2>
+                  Price:
+                  <!-- <mat-chip style="font-size: 1.2rem;" *ngIf = "products[i].price"> {{products[i].price | currency: ['INR']}}</mat-chip> -->
+                  <span *ngIf="products[i].price">
+                    {{ products[i].price | currency: ["INR"] }}</span
+                  >
+                </h2>
+							</div>
+						</div>
+						<div fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+							<div>
+								<mat-form-field appearance="outline" style="width: 150px">
+									<mat-label>Quantity</mat-label>
+									<input #quantity type="number" min="1" matInput />
+								</mat-form-field>
+							</div>
+							<div>
+								<button [disabled]="
+                    size1.value == undefined ||
+                    quantity.value <= 0" 
+                    (click)="cart(quantity.value, i, size1.value, size2.value)" mat-stroked-button color="primary">Add to cart</button>
+							</div>
+						</div>
+					</div>
+				</mat-card-content>
+			</mat-card>
+		</div>
+	</div>
+</div>
+<br />
+<br />
+<br />

@@ -1,0 +1,5 @@
+assets/
+static/
+__pycache__/
+
+staticfiles/

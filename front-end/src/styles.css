@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #eff1f3; }
+
+button {
+    outline: none !important;   
+}   
+  .headline {
+    color: white;
+    margin-top: 10%;
+    text-align: center;
+  }
+  
+  .headline p {
+    font-size: 1.2rem;
+    padding: 0 1em;
+  }
+  
+  .tagline {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  .categoryForm {
+    padding: 5px 25px;
+  }
+  .cartForm {
+    margin-top: 2em;
+  }
+  .products {
+    padding: 1em;
+  }
+  .card {
+    margin-bottom: 2em;
+  }
+  
+  .jumbotron {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  .cat-label {
+    pointer-events: none;
+  }
+  .cat-label:hover {
+    pointer-events: none;
+  }
+  

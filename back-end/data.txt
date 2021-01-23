@@ -1,0 +1,81 @@
+
+# {
+#     firstname: ,
+#     lastName: ,
+#     firmName: ,
+#     email: ,
+#     mobile: ,
+#     gstNumber: ,
+#     aadharNumber: ,
+#     discount_per: ,
+#     gst_per: ,
+#     total: ,
+#     items : [
+#         {
+#             name: ,
+#             size: ,
+#             category: ,
+#             unitPrice: ,
+#             quantity: 
+#         }
+#     ]
+# }
+
+
+
+        # data = request.data
+        # order = Order.objects.create(
+        #     first_name = data.get['firstName'],
+        #     last_name = data.get['lastName'],
+        #     email = data.get['email'],
+        #     phone = data.get['mobile'],
+        #     firm_name = data.get['firm_name'],
+        #     aadhar = data.get['aadharNumber'],
+        #     gst_percent = data.get['gst_per'],
+        #     discont_percent = data.get['discount_per'],
+        #     total= data.get['total'],
+        #     gst_number = data.get['gstNumber'],
+        # )
+        # orderitems = []
+        # for item in data.items:
+        #     item = OrderItem.objects.create(
+        #         order=order,
+        #         name = item.name,
+        #         category = item.category,
+        #         size = item.size,
+        #         price = item.unitPrice,
+        #         quantity = quantity,
+        #         cost = item.quantity * item.price
+        #         )
+        #     orderitems.append[item]
+
+
+
+{
+"orderitems": [{
+        "name": "ELBOW",
+        "unitPrice":12,
+        "articleNumber" : "Art No. 123",
+        "category":"acg",
+        "quantity":12,
+        "size":"25 (1 in)mm"
+    }, 
+    {
+        "name": "ELBOW",
+        "unitPrice":12,
+        "articleNumber" : "Art No. 123",
+        "category":"acg",
+        "quantity":12,
+        "size":"50mm(2 in)"
+    }],
+    "firstName": "asa",
+    "lastName": "sadss",
+    "firmName": "dfgdf",
+    "email": "jaysparx9@gmail.com",
+    "phone": "1234r5t6",
+    "aadharNumber": "1234",
+    "gstNumber": "23456543",
+    "gstPer": 12,
+    "discountPer": 21,
+    "total": 144
+}
