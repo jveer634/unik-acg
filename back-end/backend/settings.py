@@ -52,7 +52,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -92,7 +92,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -103,7 +102,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-DEALER_EMAIL = 'guptadikshanth12@gmail.com'
+if DEBUG:
+    DEALER_EMAIL = ['guptadikshanth12@gmail.com']
+else:
+    DEALER_EMAIL = ['unikfitting@yahoo.in', 'parasghai323@gmail.com']
 
 STATIC_URL = '/static/'
 STATICFILES = [
@@ -122,9 +124,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'orderform.unikacg@gmail.com'
 
-DEALER_EMAIL= 'guptadikshant12@gmail.com'
-
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-django_heroku.settings(locals())

@@ -14,7 +14,7 @@ class Order(models.Model):
     discount_amount = models.FloatField(blank=True)
     gst_amount = models.FloatField(blank=True)
     amount = models.FloatField(blank=True)
-
+    created_at = models.DateTimeField(auto_now_add = True)
 
     def save(self, *args, **kwargs):
         self.discount_amount =  (self.discount_percent / 100) * self.total
